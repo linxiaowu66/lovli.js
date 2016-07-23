@@ -1,99 +1,105 @@
-.list {
-  composes: center from 'styles/app';
+body {
+  background: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  padding: 30px;
+}
 
-  list-style: none;
+a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#content .tableAction{
+  margin-bottom: 10px;
+}
+
+#searchSubmit{
+  margin-left: 5px;
+}
+
+.tableAction button{
+  margin-right: 5px;
+}
+
+.popUp {
+  position: fixed;
+  background: #eeeeee;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s,visibility .35s,height .35s ease-in-out;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.popUp.open{
+  opacity: .9;
+  visibility: visible;
+  height: 50%;
+  overflow: hidden;
+}
+
+.formControl{
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+label{
+  margin: 5px 8px;
+}
+
+.submit{
+  margin-top: 5px;
+}
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+}
+
+button.close {
+  -webkit-appearance: none;
   padding: 0;
-
-  max-height: 300px;
-  overflow: auto;
-
-  transition: all 250ms ease;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
 }
 
-.item {
-  position: relative;
-  display: block;
-
-  padding: 12px;
-  margin-bottom: 6px;
-
-  background-color: transparent;
-
-  background-color: #f2f2f2;
-
-  transition: all 250ms ease;
-
-  &:hover {
-    cursor: pointer;
-
-    margin-left: 4px;
-    background-color: #ebb428;
-
-    .caption {
-      color: #fff;
-    }
-
-    :global(.fa-remove) {
-      color: #e02513;
-    }
-  }
-
-  .actions {
-    display: block;
-    float: right;
-
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translate(0, -40%);
-
-    i {
-      position: relative;
-      display: block;
-
-      width: 20px;
-      height: 20px;
-
-      text-align: center;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
+.close:focus, .close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
 }
 
-.button {
-  composes: tCenter from 'styles/app';
-  display: block;
-  box-sizing: border-box;
-
-  width: 100%;
-  padding: 12px;
-
-  color: #fff;
-  background-color: #961842;
-
-  transition: all 250ms ease;
-
-  &:hover {
-    cursor: pointer;
-
-    background-color: #d03117;
-  }
+.popUp .close{
+  margin-right: -4px;
+  padding: 10px 15px;
+  font-size: 27px;
+  line-height: 27px;
 }
 
-.input {
-  width: 100%;
-  padding: 12px;
-  box-sizing: border-box;
-
-  outline: none;
-
-  border: 1px solid #f2f2f2;
-  transition: all 250ms ease;
-
-  &:focus, &:active {
-    border-color: #961842;
-  }
+.tableHead tr th:first-child{
+  width: 10px;
 }

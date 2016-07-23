@@ -5,6 +5,10 @@ import TodoList from './todos/TodoList';
 import AddTodoButton from './todos/AddTodoButton';
 
 import 'static/vendor/font-awesome/css/font-awesome.min.css';
+import "//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"
+import "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js";
+import "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js";
+
 import styles from 'styles/app';
 
 const App = () => (
@@ -16,30 +20,10 @@ const App = () => (
         <br />
         You're connected to <a href="https://github.com/rethinkdb/horizon" target="_blank">horizon</a>.
       </p>
-      <TodoList limit={100} />
-      <AddTodoButton />
-      <div className={styles.footer}>
-        ToDos are deleted automatically every 10 minutes.
-        <br /><br />
-        built with <i className="fa fa-heart" /> by <a href="https://github.com/flipace" target="_blank">@flipace</a>
-      </div>
+      <TableBox limit={100} />
+      // <AddTodoButton />
     </div>
-    <div className={styles.social}>
-      <iframe
-        src="https://ghbtns.com/github-btn.html?user=flipace&repo=lovli.js&type=star&count=true"
-        frameBorder="0"
-        scrolling="0"
-        width="85px"
-        height="20px"
-      />
-      <iframe
-        src="https://ghbtns.com/github-btn.html?user=flipace&repo=lovli.js&type=fork&count=true"
-        frameBorder="0"
-        scrolling="0"
-        width="85px"
-        height="20px"
-      />
-    </div>
+
   </div>
 );
 
