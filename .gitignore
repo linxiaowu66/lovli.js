@@ -4,3 +4,5 @@ stats.json
 .idea
 .DS_STORE*
 .build
+static/vendor/bootstrap
+static/vendor/jquery

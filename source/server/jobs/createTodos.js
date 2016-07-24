@@ -29,4 +29,4 @@ const createRandomTodo = () => {
 
 const every2minutes = later.parse.text('every 2 minutes');
 
-later.setInterval(createRandomTodo, every2minutes);
+//later.setInterval(createRandomTodo, every2minutes);

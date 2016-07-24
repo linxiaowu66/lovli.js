@@ -14,4 +14,4 @@ const deleteTodos = () => {
   });
 };
 
-later.setInterval(deleteTodos, every10minutes);
+//later.setInterval(deleteTodos, every10minutes);

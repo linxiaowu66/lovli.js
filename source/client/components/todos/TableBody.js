@@ -2,14 +2,14 @@ import React from 'react';
 
 import TableItem from './TableItem';
 
-import styles from './styles';
+//import styles from './styles';
 
 export default ({ tables, horizon }) => (
-  <tbody className = 'tableBody'  >
+  <tbody>
   {
     tables.map(
        item => (
-         <TodoItem
+         <TableItem
            key={item.id}
            item={item}
            horizon={horizon}

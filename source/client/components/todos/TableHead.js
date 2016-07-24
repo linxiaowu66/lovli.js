@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './styles';
+//import styles from './styles';
 
 export default ({ titles }) => (
-  <thead className = 'tableHead'>
+  <thead>
     <tr>
       {
         titles.map(
