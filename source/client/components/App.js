@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Logo from './Logo';
-import TableBox from './todos/TableBox';
+import TodoList from './todos/TodoList';
+import TabelBox from './todos/TableBox';
 import AddTodoButton from './todos/AddTodoButton';
 
 import 'static/vendor/font-awesome/css/font-awesome.min.css';
@@ -20,8 +21,7 @@ const App = () => (
         <br />
         You're connected to <a href="https://github.com/rethinkdb/horizon" target="_blank">horizon</a>.
       </p>
-      <TableBox limit={100} titles={['Name', 'Grade', 'Favor', 'Sex']}/>
-      // <AddTodoButton />
+      <TabelBox />
     </div>
 
   </div>

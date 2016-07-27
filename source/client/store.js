@@ -1,4 +1,6 @@
 import thunkMiddleware from 'redux-thunk';
+import loggerMiddleware from 'redux-logger';
+
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import reducers from './reducers';
 import { routerReducer } from 'react-router-redux';
@@ -16,7 +18,8 @@ const configureStore = (initialState = {}) => {
   const store = compose(
     applyMiddleware(
       actionTypeMiddleware,
-      thunkMiddleware
+      thunkMiddleware,
+      loggerMiddleware
     )
   )(createStore)(rootReducer, initialState);
 

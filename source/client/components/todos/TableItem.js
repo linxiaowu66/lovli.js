@@ -1,28 +1,7 @@
 import React from 'react';
 import { deleteDoc } from 'horizon-react/lib/utils';
-import { Input, Select, Radio  } from 'antd';
-
-//import styles from './styles';
-
-const Option = Select.Option;
-const RadioGroup = Radio.Group;
-
-let secondColChildren = [], thirdColChildren = [];
-for (let i = 10; i < 36; i++) {
-  secondColChildren.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
-}
-
-for (let i = 10; i < 36; i++) {
-  thirdColChildren.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
-}
-
-function handleChangeForSecondCol(value) {
-  console.log(`second column selected ${value}`);
-}
-
-function handleChangeForThirdCol(value) {
-  console.log(`third column selected ${value}`);
-}
+import { Input } from 'antd';
+import styles from './styles';
 
 /**
  * A single todo list item.
@@ -34,16 +13,14 @@ function handleChangeForThirdCol(value) {
  * @return {ReactElement}
  */
 export default ({ item, horizon }) => (
-
-  <tr>
-    <td>11111</td>
-    <td>11111</td>
-    <td>11111</td>
-    <td>11111</td>
+  <tr key={item.id}>
+    <td><Input placeholder='what is your name?'/></td>
+    <td><Input placeholder='what is your name?'/></td>
+    <td><Input placeholder='what is your name?'/></td>
+    <td><Input placeholder='what is your name?'/></td>
   </tr>
 
-
-/*  <li className={styles.item} key={todo.id}>
+  /*<li className={styles.item} key={todo.id}>
     <span className={styles.caption}>{todo.text || '-'}</span>
     <span className={styles.actions}>
       <i
@@ -55,34 +32,3 @@ export default ({ item, horizon }) => (
     </span>
   </li>*/
 );
-
-/*
-<tr>
-  <td><Input placeholder="基本使用"></Input></td>
-  <td>
-    <Select
-      multiple
-      style={{ width: '100%' }}
-      placeholder="Please select"
-      defaultValue={['a10', 'c12']}
-      onChange={handleChangeForSecondCol}
-    >
-      {secondColChildren}
-    </Select>
-  </td>
-  <td>
-    <Select tags
-            style={{ width: '100%' }}
-            searchPlaceholder="标签模式"
-            onChange={handleChangeForThirdCol}
-    >
-      {thirdColChildren}
-    </Select>
-  </td>
-  <td>
-    <RadioGroup onChange={this.onChange} value={this.state.value}>
-      <Radio key="a" value={1}>A</Radio>
-      <Radio key="b" value={2}>B</Radio>
-    </RadioGroup>
-  </td>
-</tr>*/
