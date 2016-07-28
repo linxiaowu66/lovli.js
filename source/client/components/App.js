@@ -5,10 +5,7 @@ import TabelBox from './todos/TableBox';
 import AddTodoButton from './todos/AddTodoButton';
 
 import 'static/vendor/font-awesome/css/font-awesome.min.css';
-/*import "static/vendor/bootstrap/dist/css/bootstrap.min.css"
-import "static/vendor/jquery/dist/jquery.min.js";
-import "static/vendor/bootstrap/dist/js/bootstrap.min.js";*/
-
+import 'static/vendor/antd/antd.css';
 import styles from 'styles/app';
 
 const App = () => (
@@ -20,10 +17,8 @@ const App = () => (
         <br />
         You're connected to <a href="https://github.com/rethinkdb/horizon" target="_blank">horizon</a>.
       </p>
-      <AddTodoButton />
       <TabelBox />
     </div>
-
   </div>
 );
 

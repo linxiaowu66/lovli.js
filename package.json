@@ -43,6 +43,7 @@
     "react-transform-catch-errors": "1.0.2",
     "redbox-react": "1.2.3",
     "redux-devtools": "3.2.0",
+    "redux-logger": "^2.6.1",
     "script-loader": "^0.7.0",
     "shelljs": "^0.7.0",
     "style-loader": "^0.13.1",
@@ -70,7 +71,6 @@
     "react-router": "2.4.0",
     "react-router-redux": "^4.0.4",
     "redux": "3.5.2",
-    "redux-logger": "^2.6.1",
     "redux-thunk": "2.0.1",
     "rethinkdbdash": "^2.3.4",
     "winston": "^2.2.0"

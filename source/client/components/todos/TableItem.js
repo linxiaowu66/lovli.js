@@ -1,11 +1,8 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
 import { createDoc } from 'horizon-react/lib/utils';
-import { Input, Select, Radio } from 'antd';
+import { Input, Select, Radio, Button } from 'antd';
 import styles from './styles';
-
-const Option = Select.Option;
-const RadioGroup = Radio.Group;
 
 /**
  * A single todo list item.
@@ -17,48 +14,52 @@ const RadioGroup = Radio.Group;
  * @return {ReactElement}
  */
 const TableItem = ({ item, horizon }) => {
-  const collection = props.horizon('lg_table');
+  const collection = horizon('lg_table');
   const addTodo = (name, subjects, sports, sex) => createDoc(collection, { name: name, subjects: subjects, sports: sports, sex: sex});
-  return (  
+  const Option = Select.Option;
+  const RadioGroup = Radio.Group;
+  //console.log(item.content.subjects);
+  return (
   <tr key={item.id}>
-    <td><Input 
+    <td><Input
           placeholder='what is your name?'
-          id='name' 
+          id='name'
           className={styles.input}
-          defaultValue={item.name}
+          defaultValue={item.content.name}
+          style={{width: 300}}
         />
     </td>
     <td>
-      <Select 
-        mutiple 
-        style={{width: 100}} 
+      <Select
+        multiple
+        style={{width: 300}}
         id='subjects'
         onChange={(value) => {
           console.log(`selected ${value}`);
-        }} 
+        }}
         placeholder="what is your favor subjects"
         optionFilterProp="children"
         notFoundContent="Nothing"
-        defaultValue={item.subjects}
+        defaultValue={item.content.subjects}
         >
-        <Option key='0' >0</Option>
-        <Option key='1' >1</Option>
-        <Option key='2' >2</Option>
-        <Option key='3' >3</Option>
+        <Option key='yuwen' >yuwen</Option>
+        <Option key='tiyu' >tiyu</Option>
+        <Option key='dili' >dili</Option>
+        <Option key='lishi' >lishi</Option>
       </Select>
     </td>
-    <td> 
-      <Select 
-        tags 
-        style={{width: 100}}
+    <td>
+      <Select
+        tags
+        style={{width: 300}}
         id='sports'
         onChange={(value) => {
           console.log(`selected ${value}`);
-        }} 
+        }}
         placeholder="what is your favor sports"
         optionFilterProp="children"
         notFoundContent="Nothing"
-        defaultValue={item.sports}
+        defaultValue={item.content.sports}
         >
         <Option key='0' >0</Option>
         <Option key='1' >1</Option>
@@ -71,15 +72,16 @@ const TableItem = ({ item, horizon }) => {
         id='sex'
         onChange={(e) => {
           console.log('radio checked', e.target.value);
-        }} 
-        defaultValue={item.sex}
+        }}
+        defaultValue={item.content.sex}
+        style={{width: 300}}
       >
         <Radio key="0" value='male'>male</Radio>
         <Radio key="1" value='female'>female</Radio>
       </RadioGroup>
     </td>
     <td>
-      <Button 
+      <Button
         type="primary"
         onClick={() => { 
           let name = document.getElementById('name').value;
@@ -96,4 +98,4 @@ const TableItem = ({ item, horizon }) => {
   );
 };
 
-export default subscribe()(TableItem);
+export default TableItem;

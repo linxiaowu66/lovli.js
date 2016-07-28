@@ -11,6 +11,7 @@ const clientConfig = require(path.join(dirs.webpack, 'webpack.config.client.dev.
 
 function webpackServerReady() {
   console.log(`\nWebpack Dev Server listening on port ${clientConfig.devServer.port}`); // eslint-disable-line
+
   const app = require('../source/server/app.js').default;
 
   app.run();

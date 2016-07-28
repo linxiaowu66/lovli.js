@@ -17,7 +17,7 @@ const devConfig = _.assign(_.clone(defaultConfig), {
     )
   }),
   output: _.assign(_.cloneDeep(defaultConfig.output), {
-    publicPath: `http://0.0.0.0:${devProps.webpackPort}/static/`,
+    publicPath: `http://127.0.0.1:${devProps.webpackPort}/static/`,
     pathinfo: true,
     crossOriginLoading: 'anonymous'
   }),

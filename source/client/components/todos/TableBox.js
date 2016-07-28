@@ -11,8 +11,8 @@ const TableBox = (props) => (
     <thead>
       <tr>
         <th>Name</th>
-        <th>Grade</th>
-        <th>Class</th>
+        <th>Subjects</th>
+        <th>Sports</th>
         <th>Sex</th>
         <th>Action</th>
       </tr>
