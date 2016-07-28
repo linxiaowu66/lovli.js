@@ -1,2 +1,2 @@
-import './createEmptyTable';
+import './createEmptyTables';
 //import './createTodos';

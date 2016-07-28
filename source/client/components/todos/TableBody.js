@@ -1,5 +1,5 @@
 import React from 'react';
-import { subscribe?} from 'horizon-react';
+import { subscribe } from 'horizon-react';
 
 import TableItem from './TableItem';
 

@@ -53,6 +53,7 @@
   "dependencies": {
     "@horizon/client": "1.0.3",
     "@horizon/server": "1.0.3",
+    "antd": "^1.6.5",
     "exports-loader": "^0.6.3",
     "express": "^4.13.4",
     "file-loader": "^0.8.5",
@@ -69,6 +70,7 @@
     "react-router": "2.4.0",
     "react-router-redux": "^4.0.4",
     "redux": "3.5.2",
+    "redux-logger": "^2.6.1",
     "redux-thunk": "2.0.1",
     "rethinkdbdash": "^2.3.4",
     "winston": "^2.2.0"

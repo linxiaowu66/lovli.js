@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Logo from './Logo';
-import TodoList from './todos/TodoList';
 import TabelBox from './todos/TableBox';
 import AddTodoButton from './todos/AddTodoButton';
 
@@ -21,6 +20,7 @@ const App = () => (
         <br />
         You're connected to <a href="https://github.com/rethinkdb/horizon" target="_blank">horizon</a>.
       </p>
+      <AddTodoButton />
       <TabelBox />
     </div>
 

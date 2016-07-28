@@ -14,8 +14,8 @@ app.use('/static', express.static(path.join(process.cwd(), '.build')));
  * @TODO move the html out of the server dir
  */
 const host = process.env.NODE_ENV === 'production' ? '' : `http://127.0.0.1:${devProps.webpackPort}`;
-const bundle = `${host}/static/client.bundle.js`;
-const styles = `${host}/static/styles.css`;
+const bundle = '/static/client.bundle.js';
+const styles = '/static/styles.css';
 
 app.use('/', (req, res) => {
   res.status(200).send(`<!doctype html>

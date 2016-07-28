@@ -2,10 +2,10 @@ import later from 'later';
 import { r, r_internal } from '../db';
 
 const emptyTable = [
-  {name: '', grade: '', class: '', sex: ''},
-  {name: '', grade: '', class: '', sex: ''},
-  {name: '', grade: '', class: '', sex: ''},
-  {name: '', grade: '', class: '', sex: ''}
+  {name: '', subjects: '', sports: '', sex: ''},
+  {name: '', subjects: '', sports: '', sex: ''},
+  {name: '', subjects: '', sports: '', sex: ''},
+  {name: '', subjects: '', sports: '', sex: ''}
 ]
 
 const createEmptyTable = () => {

@@ -14,6 +14,7 @@ const TableBox = (props) => (
         <th>Grade</th>
         <th>Class</th>
         <th>Sex</th>
+        <th>Action</th>
       </tr>
     </thead>
     <TableBody limit={100} />
