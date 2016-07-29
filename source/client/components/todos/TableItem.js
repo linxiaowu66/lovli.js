@@ -13,9 +13,11 @@ import styles from './styles';
  * @param  {Object} horizon The horizon object which will be passed to deleteDoc
  * @return {ReactElement}
  */
-const TableItem = ({ item, horizon }) => {
-  const collection = horizon('lg_table');
-  const addTodo = (name, subjects, sports, sex) => createDoc(collection, { name: name, subjects: subjects, sports: sports, sex: sex});
+const TableItem = ({ item, allSports, allSubjects, horizon }) => {
+  const lgCollection = horizon('lg_table');
+  const sportCollection = horizon('sport_table');
+  const addTable = (name, subjects, sports, sex) => createDoc(lgCollection, { name: name, subjects: subjects, sports: sports, sex: sex});
+  const addSportTable = (sport) => createDoc(sportCollection,{ sport: sport });
   const Option = Select.Option;
   const RadioGroup = Radio.Group;
   //console.log(item.content.subjects);
@@ -42,10 +44,11 @@ const TableItem = ({ item, horizon }) => {
         notFoundContent="Nothing"
         defaultValue={item.content.subjects}
         >
-        <Option key='yuwen' >yuwen</Option>
-        <Option key='tiyu' >tiyu</Option>
-        <Option key='dili' >dili</Option>
-        <Option key='lishi' >lishi</Option>
+        {
+          allSubjects.map (subject => (
+            <Option key={subject} >{subject}</Option>      
+          )
+        )}  
       </Select>
     </td>
     <td>
@@ -61,10 +64,11 @@ const TableItem = ({ item, horizon }) => {
         notFoundContent="Nothing"
         defaultValue={item.content.sports}
         >
-        <Option key='0' >0</Option>
-        <Option key='1' >1</Option>
-        <Option key='2' >2</Option>
-        <Option key='3' >3</Option>
+        {
+          allSports.map ( sport => (
+            <Option key={sport}>{sport}</Option>
+          ))
+        }
       </Select>
     </td>
     <td>
@@ -85,10 +89,33 @@ const TableItem = ({ item, horizon }) => {
         type="primary"
         onClick={() => { 
           let name = document.getElementById('name').value;
-          let subjects = document.getElementById('subjects').value;
-          let sports = document.getElementById('sports').value;
+          let subject = document.getElementById('subjects').value;
+          let sport = document.getElementById('sports').value;
           let sex = document.getElementById('sex').value;
-          addTodo(name, subjects, sports, sex);
+
+          let subHTMLArray = subject.getElementsByClassName('ant-select-selection__choice__content');
+          let subArray = [], sportArray=[];
+          for (let index = 0; index < subHTMLArray; index++){
+            subArray.push(subHTMLArray[index].innerHTML);
+          }
+          let spoHTMLArray = sport.getElementsByClassName('ant-select-selection__choice__content');
+
+          for (let index = 0; index < spoHTMLArray; index++){
+            sportArray.push(spoHTMLArrayArray[index].innerHTML);
+          }
+          
+          let newSpoArray = [];
+
+          sportArray.map(sport => {
+            if (allSports.indexOf(sport) === -1){
+              newSpoArray.push(sport);
+            }
+          })
+          
+          newSpoArray.map(sport =>{
+            addSportTable(sport);
+          })
+          addTable(name, subjects, sports, sex);
         }}
         >
         Add
