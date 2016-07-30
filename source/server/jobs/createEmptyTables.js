@@ -15,15 +15,20 @@ const createEmptyTable = () => {
   .then(function(result) {
     r.table(result.table).delete().run();
     emptyTable.map(function(item, index){
-      r.table(result.table).insert({ content: item, $hz_v$: index }).run();
+      r.table(result.table).insert({ content: item, $hz_v$: index, id: index }).run();
     });
   });
-  r_internal.table('collections').get('sport_table').run()
+  r_internal.table('collections').get('subject_table').run()
     .then(function(result){
       r.table(result.table).delete().run();
+      console.log(defaultSubTable);
       defaultSubTable.map(function(subject,index){
-        r.table(result.table).insert({subject: subject, $hz_v$:index}).run();
+        r.table(result.table).insert({subject: subject, $hz_v$:index, id: index}).run();
       });
+    });
+    r_internal.table('collections').get('sport_table').run()
+    .then(function(result){
+      r.table(result.table).delete().run();
     });
 };
 
