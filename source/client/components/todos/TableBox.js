@@ -7,7 +7,7 @@ import styles from './styles';
 
 
 const TableBox = (props) => (
-  <table>
+  <table className={styles.tableBox}>
     <thead>
       <tr>
         <th>Name</th>
