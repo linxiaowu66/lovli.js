@@ -1,6 +1,6 @@
 import React , { Component, PropTypes } from 'react';
 import { subscribe } from 'horizon-react';
-import { createDoc, updateDoc } from 'horizon-react/lib/utils';
+import { createDoc, updateDoc } from 'horizon-react-extend/lib/utils';
 import { Input, Select, Radio, Button } from 'antd';
 import styles from './styles';
 
