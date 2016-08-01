@@ -21,7 +21,6 @@ const createEmptyTable = () => {
   r_internal.table('collections').get('subject_table').run()
     .then(function(result){
       //r.table(result.table).delete().run();
-      console.log(defaultSubTable);
       defaultSubTable.map(function(subject,index){
         r.table(result.table).insert({subject: subject, $hz_v$:index, id: index}).run();
       });
