@@ -6,22 +6,22 @@
 # lovli.js
 A starter kit which allows you to develop realtime applications in minutes.
 
-![lovli.js Preview](static/images/preview.gif)
+![lovli.js Preview](static/images/tablePreview.gif)
 
-**Demo:** [lovli.neschkudla.at](http://lovli.neschkudla.at/)
 
 ### Stack
 
 - [facebook/react](https://github.com/facebook/react) - View
 - [reactjs/redux](https://github.com/reactjs/redux) - App State
 - [rethinkdb/horizon](https://github.com/rethinkdb/horizon) - Realtime Database Sync
-- [flipace/horizon-react](https://github.com/flipace/horizon-react) - Connect View + Data
+- [linxiaowu66/horizon-react](https://github.com/linxiaowu66/horizon-react) - Connect View + Data
 - [gaearon/react-hot-loader](https://github.com/gaearon/react-hot-loader) - Hot Reloading of React Components
 - [webpack/webpack](https://github.com/webpack/webpack) - Builds & Dev-Server
+- [ant-design/ant-design](https://github.com/ant-design/ant-design) - React Components Design
 
 ### Installation
 ``` bash
-$ git clone --depth=1 https://github.com/flipace/lovli.js
+$ git clone --depth=1 https://github.com/linxiaowu66/lovli.js
 $ cd lovli.js
 $ npm i
 ```

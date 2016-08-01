@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Logo from './Logo';
-import TabelBox from './todos/TableBox';
-import AddTodoButton from './todos/AddTodoButton';
+import TabelBox from './tables/TableBox';
+import AddTodoButton from './tables/AddTodoButton';
 
 import 'static/vendor/font-awesome/css/font-awesome.min.css';
 import 'static/vendor/antd/antd.css';

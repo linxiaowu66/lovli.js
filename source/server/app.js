@@ -4,7 +4,8 @@ import horizon from '@horizon/server';
 import devProps from '../../config/webpack/devProps';
 import config from '../../config/page';
 
-import './jobs';
+//import './jobs';
+import createEmptyTable from './jobs/createEmptyTables'
 
 const app = express();
 
@@ -43,6 +44,7 @@ const run = () => {
     console.log(`Express listening at http://localhost:${port}`); // eslint-disable-line
   });
 
+
   // @TODO make this configurable
   const horizonServer = horizon(httpServer, {
     auto_create_collection: true,
@@ -55,6 +57,8 @@ const run = () => {
       token_secret: config.token_secret
     }
   });
+  
+  createEmptyTable();
 };
 
 export default {

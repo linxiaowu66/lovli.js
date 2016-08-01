@@ -15,41 +15,34 @@ export default class TableItem extends Component {
     };
   }
   componentWillReceiveProps(nextProps){
-    let index = nextProps.index;
-    if (nextProps.items.length !== 0 && nextProps.items.length >= (index + 1)) {
-      let item = nextProps.items[index];
-      console.log(this.state.name);
+      let item = nextProps.item;
       this.setState({
         name: item.content.name,
         subjects: item.content.subjects,
         sports: item.content.sports,
         sex: item.content.sex
       });
-    }else{
-      this.setState({
-        name: '',
-        subjects: [],
-        sports: [],
-        sex: ''
-      });
-    }
   }
   render(){
     const allSubjects = this.props.allSubjects;
     const allSports = this.props.allSports;
     const lgCollection = this.props.horizon('lg_table');
     const sportCollection = this.props.horizon('sport_table');
-    const addTable = (studentTable) => createDoc(lgCollection, {
+    const updateTable = (studentTable, index) => updateDoc(lgCollection, {
       content: studentTable,
-      id: this.props.index,
-      $hz_v$:this.props.index
+      id: index
     });
+    const addEmptyTable = (index) => createDoc(lgCollection, {
+      content: {name:'',subjects:[],sports:[],sex:''},
+      id: index,
+      $hz_v$: index    
+    }); 
     const addSportTable = (sport) => createDoc(sportCollection, { sport: sport });
     const Option = Select.Option;
     const RadioGroup = Radio.Group;
 
     return (
-      <tr key={this.props.index}>
+      <tr key={this.props.item.id}>
         <td>
           <Input
             placeholder='what is your name?'
@@ -139,11 +132,20 @@ export default class TableItem extends Component {
                 name: this.state.name,
                 subjects: this.state.subjects,
                 sports: this.state.sports,
-                sex: this.state.sex
+                sex: this.state.sex,
+                completed: true
               };
 
-              addTable(studentTable);
-              this.props.handleAddAction(this.props.index);
+              updateTable(studentTable, this.props.item.id);
+              let completedNum = 0;
+              this.props.allItems.map(item => {
+                if (item.content.completed === true){
+                  completedNum++;
+                }
+              })
+              if (completedNum === (this.props.allItems.length - 1)){
+                addEmptyTable(this.props.allItems.length);
+              }
             }}
           >
             Add

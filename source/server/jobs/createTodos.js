@@ -29,4 +29,4 @@ const createRandomTodo = () => {
 
 const every2minutes = later.parse.text('every 2 minutes');
 
-later.setTimeout(createEmptyTable, every1seconds);
+//later.setTimeout(createEmptyTable, every1seconds);
