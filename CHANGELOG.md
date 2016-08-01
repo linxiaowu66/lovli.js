@@ -1,5 +1,9 @@
 # Change Log
 
+### v0.7.7
+- change the todo list to a table demo
+- make this table demo can add the data to database
+
 ### v0.7.6
 - fix $hz_v$ issue by faking field on server
 - set social icons to fixed position

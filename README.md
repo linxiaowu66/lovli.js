@@ -63,7 +63,7 @@ The server won't hot reload. It would be possible to implement a restart on file
 ### Contributing
 Pull Requests are very welcome!
 
-If you find any issues, please report them via [Github Issues](https://github.com/flipace/lovli.js/issues)!
+If you find any issues, please report them via [Github Issues](https://github.com/linxiaowu66/lovli.js/issues)!
 
 ### License
 (MIT)
